@@ -34,8 +34,8 @@ export default function ProfileCarousel() {
         <img
           src={images[currentImage]}
           alt=""
-          className={styles.image}
-        />
+          className={`${styles.image} fixed-image-size`} /* added this so the images keep only 1 size */
+          />
         <div className={styles.textContainer}>
           <div className={styles.name}>
             <div className={`${styles.text} ${nameClassName}`}>Lola Russell</div>

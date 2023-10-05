@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import styles from "./Bio.module.css";
+import stylesBtn from '../pages/Dashboard.module.css'; // Import your CSS
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { ThemeContext } from "../ThemeContext";
+import { Link } from "react-router-dom";
 
 const Bio = ({ showShortBio, handleShortBioClick, handleLongBioClick, showExploreButton}) => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -12,17 +16,20 @@ const Bio = ({ showShortBio, handleShortBioClick, handleLongBioClick, showExplor
 
   return (
     <div className={styles.container}>
-      <div className={styles.bioContainer}>
+      {/* Set a fixed height for the Bio container */}
+      <div className={styles.bioContainer} style={{ height: "400px" }}>
         <div className={styles.buttonGroup}>
           <button
             onClick={handleShortBioClick}
-            className={`${styles.button} ${showShortBio ? styles.active : ""}`}
+            className={`${styles.button} ${showShortBio ? styles.active : ""
+              }`}
           >
             Short
           </button>
           <button
             onClick={handleLongBioClick}
-            className={`${styles.button} ${!showShortBio ? styles.active : ""}`}
+            className={`${styles.button} ${!showShortBio ? styles.active : ""
+              }`}
           >
             Long
           </button>
@@ -43,10 +50,37 @@ const Bio = ({ showShortBio, handleShortBioClick, handleLongBioClick, showExplor
             </>
           )}
         </div>
+
+        {/* Include the actions within the Bio component */}
+        <div className={stylesBtn.bioActions}>
+          <Link to="/projects">
+            <button className={stylesBtn.exploreButton}>
+              Explore Projects
+            </button>
+          </Link>
+
+          <div className={stylesBtn.socialIcons}>
+            <a
+              href="https://www.linkedin.com/in/lola-russell-developer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={stylesBtn.socialIcon}
+            >
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            </a>
+            <a
+              href="https://github.com/LeeLoo3434"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={stylesBtn.socialIcon}
+            >
+              <FontAwesomeIcon icon={faGithub} size="2x" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Bio;
-

@@ -8,6 +8,7 @@
     justify-content: center;
     height: 100vh;
     padding: 2rem;
+    
 }
 
 /* Two-column container for larger screens */
@@ -38,6 +39,7 @@
     max-width: 50%;
     /* Set maximum width to 50% */
     text-align: center;
+    
 }
 
 .exploreButtonContainer {
