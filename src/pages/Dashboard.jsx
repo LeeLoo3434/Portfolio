@@ -5,7 +5,7 @@ import ProfileCarousel from '../components/ProfileCarousel';
 import Bio from '../components/Bio';
 import { ThemeContext } from '../ThemeContext';
 import Navbar from '../components/Navbar';
-import styles from './Dashboard.module.css'; // Import your CSS
+import styles from './Dashboard.module.css';
 import '../styles.css';
 
 export default function Dashboard() {

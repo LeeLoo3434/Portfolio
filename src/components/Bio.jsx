@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./Bio.module.css";
-import stylesBtn from '../pages/Dashboard.module.css'; // Import your CSS
+import stylesBtn from '../pages/Dashboard.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { ThemeContext } from "../ThemeContext";
